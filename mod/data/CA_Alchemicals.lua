@@ -725,7 +725,9 @@ function CodexArcanum.INIT.CA_Alchemicals()
                     end
                 end
                 local conv_card = pseudorandom_element(eligible_cards, pseudoseed(card.ability.name))
-                
+
+                if not conv_card then break end
+
                 delay(0.05)
                 if not (G.hand.highlighted[1].edition) then conv_card:juice_up(1, 0.5) end
                 conv_card:set_ability(G.hand.highlighted[1].config.center)
