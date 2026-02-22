@@ -563,7 +563,7 @@ function Game:update_round_eval(dt)
   end
   
   for k, card in ipairs(G.playing_cards) do
-    if card.ability.extra and card.ability.extra.oil then
+    if card.ability.extra and type(card.ability.extra) == "table" and card.ability.extra.oil then
       card.ability.extra.oil = nil
     end
   end
