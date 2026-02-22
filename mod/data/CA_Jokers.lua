@@ -113,10 +113,10 @@ function CodexArcanum.INIT.CA_Jokers()
             return
         end
 
-        if context.cardarea == G.jokers and not context.after and not context.before then
+        if context.joker_main then
             return {
                 message = localize{type='variable',key='a_chips',vars={card.ability.extra.total_chips}},
-                chip_mod = card.ability.extra.total_chips
+                chips = card.ability.extra.total_chips
             }
         end
     end
